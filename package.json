@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "ts-node src/main.ts"
+    "eth-script": "ts-node src/ethereum/index.ts",
+    "sol-script": "ts-node src/solana/index.ts"
   },
   "devDependencies": {
     "prettier": "^3.3.1",
