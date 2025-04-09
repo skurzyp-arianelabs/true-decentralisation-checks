@@ -9,7 +9,8 @@
     "sol-script": "ts-node src/solana/index.ts",
     "ada-script": "ts-node src/cardano/index.ts",
     "algo-script": "ts-node src/algorand/index.ts",
-    "avax-script": "ts-node src/avalanche/index.ts"
+    "avax-script": "ts-node src/avalanche/index.ts",
+    "pol-script": "ts-node src/polygon/index.ts"
   },
   "devDependencies": {
     "prettier": "^3.3.1",

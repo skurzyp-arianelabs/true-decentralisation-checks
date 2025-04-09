@@ -9,8 +9,8 @@ const LOWER_BLOCK_HEIGHT = "59553292"; // Apr 1, 2025, 11:00:00 AM GMT+2, block 
 const UPPER_BLOCK_HEIGHT = "59599310"; // Apr 2, 2025, 11:00:00 AM GMT+2, block height: 59599310
 const RANGE = Number(UPPER_BLOCK_HEIGHT) - Number(LOWER_BLOCK_HEIGHT);
 const REQUEST_INTERVAL = 750;
-const MID_EXECUTION_SAVING = 3000; // decides each how may blocks the map of validators is saved
-const NUMBER_OF_API_KEYS = 3; // free api plan has a very limited request rate. To speed up the data collection multiple API keys can be used. Follow the naming convention of the env. File
+const MID_EXECUTION_SAVING = 3000; // decides each how many blocks the map of validators is saved
+const NUMBER_OF_API_KEYS = 3; // Free api plan has a very limited request rate. To speed up the data collection, multiple API keys can be used. Follow the naming convention of the env. file
 
 async function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -132,7 +132,7 @@ function saveValidators(
   validators: Map<string, number>,
   name: string,
 ) {
-  const outputPath = path.join(__dirname, '../out');
+  const outputPath = path.join(__dirname, './out');
   if (!fs.existsSync(outputPath)) {
     fs.mkdirSync(outputPath, { recursive: true });
   }
