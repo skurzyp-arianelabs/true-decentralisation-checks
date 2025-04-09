@@ -44,16 +44,37 @@ To modify the time range, adjust the FIRST_BLOCK and LAST_BLOCK values.
 
 ## Cardano
 
-This script measures the number of unique proposers and generates a table of validators grouped by the number of blocks they have validated within a given period.
-
+This script calculates the number of unique proposers and the total number of blocks
+proposed within a selected time frame for the Cardano blockchain.
+Additionally, it prints a distribution table showing how nodes contribute to block production.
 ### Running the script
-```sh
+```shell
 npm run ada-script
 ```
 
 ### Note
+To modify the time range, adjust the following values:
+- `currentBlockHash` - hash of the last block
+- `TARGET_DATE` - set starting date of the time frame to be processed.
 
-To change the time range, adjust the TARGET_DATE. The script analyzes blocks from the most recent down to the target date.
+Note: Due to API endpoint constraints, blocks are fetched from the newest to the oldest.
+
+***
+
+## Algorand
+This script identifies unique block proposers and counts the number of blocks each proposer has created within a selected time frame. The output includes:
+- The total number of unique proposers
+- The total number of blocks proposed
+- A distribution table showing the percentage of blocks proposed by different groups of nodes
+- A "superminority" calculation, which highlights the concentration of block proposal power among a small subset of validators. Note that this "superminority" is not equivalent to the Nakamoto Coefficient but serves as an indicator of power concentration.
+### Running the script
+```shell
+npm run algo-script
+```
+### Note
+To modify the time range, adjust the following values:
+- `LOWER_DATE_RANGE` - Start date of the analysis period.
+- `UPPER_DATE_RANGE` - End date of the analysis period.
 
 ***
 
